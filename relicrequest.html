@@ -1,0 +1,96 @@
+<html>
+    <style>
+        body{
+            font-family: 'Helvetica', Arial, sans-serif; 
+            width: 500px;
+        }
+        #content{
+            position: fixed;
+            left: 200px;
+            top:5%;
+            width: 325px;
+            height:inherit;
+            border: 1px solid black;
+            font-size: 9pt;
+            padding-left:10px;
+            overflow: scroll;
+        }
+        input[type=text] {
+            border: 1px solid #CCC;
+        }
+        textarea{
+            border: 1px solid #CCC;
+        }
+        h2{
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 9pt;
+        }
+        #result{
+            position: fixed;
+            width: 305px;
+            height: 325px;
+            top:5%;
+            left:500px;
+            margin-left:50px;
+            border: 1px solid black;
+            font-size: 9pt;
+            padding-left:5px;
+            overflow: scroll;
+            
+        }
+        
+    </style>
+    
+    <body><div id="content">
+    <!--<div id="windowInt" style="display: none;">-->
+    <div id="head">
+        <form id="relicform" method="get">
+        <h2><br>      Relic<br></h2>
+        Name: <input type="text" name="name"><br>
+        Story:<br><textarea rows="1" cols="40" name="story"></textarea><br>
+        Description:<br><textarea rows="1" cols="40" name="desc"></textarea><br>
+        Notes: <br><textarea rows="1" cols="40" name="notes"></textarea><br>
+        <h2><br>      Power<br></h2>
+        Power Name: <input type="text" name="pwrname"><br>
+        Power Description:<br><textarea rows="1" cols="40" name="pwrdesc"></textarea><br>
+        Spend: <input type="text" name="pwrspend"><br>
+        Activation Method: <input type="text" name="pwractivate"><br>    
+        Duration: <input type="text" name="pwrduration"><br>
+        Roll Results: <input type="text" name="pwrrollres"><br>
+        <h2><br>      Drawback<br></h2>
+        Drawback Name: <input type="text" name="drwname"><br>
+        Drawback Description:<br><textarea rows="1" cols="40" name="drwdesc"></textarea><br><br>
+        <h2><input type="button" value="Enter" onclick="displayRequest(form);"></h2></form>
+        <br>
+        </div></div>
+        <div id="result"><br><h2>      Request</h2><div id="relicres"> </div></div>
+    
+    
+    <script>
+    function displayRequest(form){
+        var relnm = form.name.value;
+        var relstory = form.story.value;
+        var reldesc = form.desc.value;
+        var relnt = form.notes.value;
+        var pwrnm = form.pwrname.value;
+        var pwrdsc = form.pwrdesc.value;
+        var pwrspd = form.pwrspend.value;
+        var pwract = form.pwractivate.value;
+        var pwrdur = form.pwrduration.value;
+        var pwrrlres = form.pwrrollres.value;
+        var drwnm = form.drwname.value;
+        var drwdsc = form.drwdesc.value;
+            
+        //var results = "+request PRP: "+prpnm+"%rPRP Name: "+prpnm+"%Rating: "+rate+"%rPlayers: "+reldesc+"%rIncentive: "+inct+"%rSummary: "+summ+"%Logs: "+logs+"%rComments: "+comm+"%rTotal: "+tot+"%r";
+        
+        document.getElementById('relicres').innerHTML = "+req/relic  "+relnm+"=%r%t%xuRelic%xn%rName: "+relnm+"%rStory: "+relstory+"%rDescription: "+reldesc+"%rNotes: "+relnt+"%r%r%t%xuPower(s)%xn%rPower Name: "+pwrnm+"%rPower Description: "+pwrdsc+"%rSpend: "+pwrspd+"%rActivation: "+pwract+"%rDuration: "+pwrdur+"%rRoll Results: "+pwrrlres+"%r%r%t%xuDrawback(s)%xn%rDrawback Name: "+drwnm+"%rDrawback Description: "+drwdsc+"%r";
+    }
+
+    </script>
+        
+
+    </body>
+</html>
+
